@@ -25,8 +25,9 @@ namespace _01_01_Crud_ADO_NET.filedb
          
          */
         /*
-         para que el proyecto funcione es necesario agregar EntityFramework.SqlServer y EntityFramework desde el administrador de paquetes NuGet si el proyecto se descargo de gitHUb
-        pero si se esta recreando desde 0 se agregan por default cuando agregamos el modelo con ADO.NET Entity  
+         --para que el proyecto funcione es necesario agregar (EntityFramework.SqlServer y EntityFramework) desde el administrador de paquetes NuGet si el proyecto se descargo de gitHUb
+         --pero si se esta recreando desde 0 se agregan por default cuando agregamos el modelo con ADO.NET Entity  se agrega (EntityFramework.SqlServer y EntityFramework) 
+         --o no probe pero creo seria una solucion el borrar el modelo y sgregar uno nuevo con ADO.NET
          */
     }
 }
