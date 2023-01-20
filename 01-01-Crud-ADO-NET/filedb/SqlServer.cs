@@ -9,6 +9,8 @@ namespace _01_01_Crud_ADO_NET.filedb
     class SqlServer
     {
         /*
+         * lineas de Sql-Server
+         * 
         create database crudbasic
             go
         use crudbasic

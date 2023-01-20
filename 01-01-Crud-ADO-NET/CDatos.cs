@@ -18,6 +18,7 @@ namespace _01_01_Crud_ADO_NET
                 using(db=new crudbasicEntities())
                 {
                     db.persona.Add(opPersona);
+                    db.SaveChanges();
                 }
             }
             catch (Exception e)
@@ -40,7 +41,7 @@ namespace _01_01_Crud_ADO_NET
                 return null;
             }
         }
-        public void update(persona opPersona)
+        public void Update(persona opPersona)
         {
             try
             {
