@@ -16,5 +16,10 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
         {
             InitializeComponent();
         }
+
+        private void FormRolUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
