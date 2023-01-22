@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbrolesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="modulo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="opcion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="60" />
+          <Property Name="moduloid" Type="int" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'dbroles.dbo.permiso' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="permiso">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rolUsuarioid" Type="int" />
+          <Property Name="opcionid" Type="int" />
+          <Property Name="permitido" Type="bit" />
+        </EntityType>
+        <EntityType Name="rol">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="60" />
+          <Property Name="passwordd" Type="varchar" MaxLength="60" />
+          <Property Name="rolid" Type="int" />
+        </EntityType>
+        <Association Name="FK__opcion__moduloid__38996AB5">
+          <End Role="modulo" Type="Self.modulo" Multiplicity="0..1" />
+          <End Role="opcion" Type="Self.opcion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="modulo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="opcion">
+              <PropertyRef Name="moduloid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__permiso__opcioni__3F466844">
+          <End Role="opcion" Type="Self.opcion" Multiplicity="0..1" />
+          <End Role="permiso" Type="Self.permiso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="opcion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="permiso">
+              <PropertyRef Name="opcionid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__permiso__rolUsua__3E52440B">
+          <End Role="rol" Type="Self.rol" Multiplicity="0..1" />
+          <End Role="permiso" Type="Self.permiso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="permiso">
+              <PropertyRef Name="rolUsuarioid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__usuario__rolid__4222D4EF">
+          <End Role="rol" Type="Self.rol" Multiplicity="0..1" />
+          <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="rolid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbrolesModelStoreContainer">
+          <EntitySet Name="modulo" EntityType="Self.modulo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="opcion" EntityType="Self.opcion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="rol" EntityType="Self.rol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="permiso" EntityType="Self.permiso" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [permiso].[id] AS [id], 
+    [permiso].[rolUsuarioid] AS [rolUsuarioid], 
+    [permiso].[opcionid] AS [opcionid], 
+    [permiso].[permitido] AS [permitido]
+    FROM [dbo].[permiso] AS [permiso]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__opcion__moduloid__38996AB5" Association="Self.FK__opcion__moduloid__38996AB5">
+            <End Role="modulo" EntitySet="modulo" />
+            <End Role="opcion" EntitySet="opcion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__permiso__opcioni__3F466844" Association="Self.FK__permiso__opcioni__3F466844">
+            <End Role="opcion" EntitySet="opcion" />
+            <End Role="permiso" EntitySet="permiso" />
+          </AssociationSet>
+          <AssociationSet Name="FK__permiso__rolUsua__3E52440B" Association="Self.FK__permiso__rolUsua__3E52440B">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="permiso" EntitySet="permiso" />
+          </AssociationSet>
+          <AssociationSet Name="FK__usuario__rolid__4222D4EF" Association="Self.FK__usuario__rolid__4222D4EF">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbrolesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="modulo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="opcion" Relationship="Self.FK__opcion__moduloid__38996AB5" FromRole="modulo" ToRole="opcion" />
+        </EntityType>
+        <EntityType Name="opcion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="moduloid" Type="Int32" />
+          <NavigationProperty Name="modulo" Relationship="Self.FK__opcion__moduloid__38996AB5" FromRole="opcion" ToRole="modulo" />
+          <NavigationProperty Name="permiso" Relationship="Self.FK__permiso__opcioni__3F466844" FromRole="opcion" ToRole="permiso" />
+        </EntityType>
+        <EntityType Name="rol">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="permiso" Relationship="Self.FK__permiso__rolUsua__3E52440B" FromRole="rol" ToRole="permiso" />
+          <NavigationProperty Name="usuario" Relationship="Self.FK__usuario__rolid__4222D4EF" FromRole="rol" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="passwordd" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="rolid" Type="Int32" />
+          <NavigationProperty Name="rol" Relationship="Self.FK__usuario__rolid__4222D4EF" FromRole="usuario" ToRole="rol" />
+        </EntityType>
+        <EntityType Name="permiso">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rolUsuarioid" Type="Int32" />
+          <Property Name="opcionid" Type="Int32" />
+          <Property Name="permitido" Type="Boolean" />
+          <NavigationProperty Name="opcion" Relationship="Self.FK__permiso__opcioni__3F466844" FromRole="permiso" ToRole="opcion" />
+          <NavigationProperty Name="rol" Relationship="Self.FK__permiso__rolUsua__3E52440B" FromRole="permiso" ToRole="rol" />
+        </EntityType>
+        <Association Name="FK__opcion__moduloid__38996AB5">
+          <End Role="modulo" Type="Self.modulo" Multiplicity="0..1" />
+          <End Role="opcion" Type="Self.opcion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="modulo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="opcion">
+              <PropertyRef Name="moduloid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__permiso__opcioni__3F466844">
+          <End Role="opcion" Type="Self.opcion" Multiplicity="0..1" />
+          <End Role="permiso" Type="Self.permiso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="opcion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="permiso">
+              <PropertyRef Name="opcionid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__permiso__rolUsua__3E52440B">
+          <End Role="rol" Type="Self.rol" Multiplicity="0..1" />
+          <End Role="permiso" Type="Self.permiso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="permiso">
+              <PropertyRef Name="rolUsuarioid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__usuario__rolid__4222D4EF">
+          <End Role="rol" Type="Self.rol" Multiplicity="0..1" />
+          <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="rolid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbrolesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="modulo" EntityType="Self.modulo" />
+          <EntitySet Name="opcion" EntityType="Self.opcion" />
+          <EntitySet Name="rol" EntityType="Self.rol" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" />
+          <EntitySet Name="permiso" EntityType="Self.permiso" />
+          <AssociationSet Name="FK__opcion__moduloid__38996AB5" Association="Self.FK__opcion__moduloid__38996AB5">
+            <End Role="modulo" EntitySet="modulo" />
+            <End Role="opcion" EntitySet="opcion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__permiso__opcioni__3F466844" Association="Self.FK__permiso__opcioni__3F466844">
+            <End Role="opcion" EntitySet="opcion" />
+            <End Role="permiso" EntitySet="permiso" />
+          </AssociationSet>
+          <AssociationSet Name="FK__permiso__rolUsua__3E52440B" Association="Self.FK__permiso__rolUsua__3E52440B">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="permiso" EntitySet="permiso" />
+          </AssociationSet>
+          <AssociationSet Name="FK__usuario__rolid__4222D4EF" Association="Self.FK__usuario__rolid__4222D4EF">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbrolesModelStoreContainer" CdmEntityContainer="dbrolesEntities">
+          <EntitySetMapping Name="modulo">
+            <EntityTypeMapping TypeName="dbrolesModel.modulo">
+              <MappingFragment StoreEntitySet="modulo">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="opcion">
+            <EntityTypeMapping TypeName="dbrolesModel.opcion">
+              <MappingFragment StoreEntitySet="opcion">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="moduloid" ColumnName="moduloid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rol">
+            <EntityTypeMapping TypeName="dbrolesModel.rol">
+              <MappingFragment StoreEntitySet="rol">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="dbrolesModel.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="passwordd" ColumnName="passwordd" />
+                <ScalarProperty Name="rolid" ColumnName="rolid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="permiso">
+            <EntityTypeMapping TypeName="dbrolesModel.permiso">
+              <MappingFragment StoreEntitySet="permiso">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="rolUsuarioid" ColumnName="rolUsuarioid" />
+                <ScalarProperty Name="opcionid" ColumnName="opcionid" />
+                <ScalarProperty Name="permitido" ColumnName="permitido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
