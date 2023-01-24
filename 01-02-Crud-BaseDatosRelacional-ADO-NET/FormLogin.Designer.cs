@@ -60,6 +60,7 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(210, 13);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // panel1
             // 
@@ -93,6 +94,7 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
             this.btnClose.Size = new System.Drawing.Size(30, 26);
             this.btnClose.TabIndex = 0;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnAcceder
             // 
@@ -106,6 +108,7 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
             this.btnAcceder.TabIndex = 9;
             this.btnAcceder.Text = "Acceder";
             this.btnAcceder.UseVisualStyleBackColor = false;
+            this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
             // 
             // label2
             // 
@@ -134,6 +137,7 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
             this.txtPassword.Size = new System.Drawing.Size(210, 13);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // FormLogin
             // 

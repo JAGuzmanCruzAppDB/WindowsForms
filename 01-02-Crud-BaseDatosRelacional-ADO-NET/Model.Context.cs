@@ -13,10 +13,10 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class dbrolesEntities : DbContext
+    public partial class dbtstEntities : DbContext
     {
-        public dbrolesEntities()
-            : base("name=dbrolesEntities")
+        public dbtstEntities()
+            : base("name=dbtstEntities")
         {
         }
     

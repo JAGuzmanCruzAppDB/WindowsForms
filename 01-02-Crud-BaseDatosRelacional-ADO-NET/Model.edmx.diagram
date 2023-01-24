@@ -4,16 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7034151644e84a97b5c8febc5d60a750" Name="Diagram1">
-        <EntityTypeShape EntityType="dbrolesModel.modulo" Width="1.5" PointX="1.5" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbrolesModel.opcion" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbrolesModel.rol" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbrolesModel.usuario" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbrolesModel.permiso" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="dbrolesModel.FK__opcion__moduloid__38996AB5" ManuallyRouted="false" />
-        <AssociationConnector Association="dbrolesModel.FK__permiso__opcioni__3F466844" ManuallyRouted="false" />
-        <AssociationConnector Association="dbrolesModel.FK__permiso__rolUsua__3E52440B" ManuallyRouted="false" />
-        <AssociationConnector Association="dbrolesModel.FK__usuario__rolid__4222D4EF" ManuallyRouted="false" />
+      <Diagram DiagramId="b1e8df6b6bfb4b79ba8deb4216c86170" Name="Diagram1">
+        <EntityTypeShape EntityType="dbtstModel.modulo" Width="1.5" PointX="1.5" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbtstModel.opcion" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbtstModel.rol" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbtstModel.usuario" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbtstModel.permiso" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="dbtstModel.FK__opcion__moduloid__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="dbtstModel.FK__permiso__opcioni__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="dbtstModel.FK__permiso__rolUsua__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="dbtstModel.FK__usuario__rolid__4222D4EF" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

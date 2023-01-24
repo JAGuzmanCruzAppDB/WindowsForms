@@ -83,6 +83,7 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
             this.btnUsuario.Tag = "3";
             this.btnUsuario.Text = "Usuario";
             this.btnUsuario.UseVisualStyleBackColor = true;
+            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
             // btnSocio
             // 
@@ -203,6 +204,7 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
             this.btnRol_Usuario.Tag = "10";
             this.btnRol_Usuario.Text = "Rol Usuario";
             this.btnRol_Usuario.UseVisualStyleBackColor = true;
+            this.btnRol_Usuario.Click += new System.EventHandler(this.btnRol_Usuario_Click);
             // 
             // btnLocker
             // 
@@ -372,6 +374,7 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
             this.btnClientes.TabIndex = 5;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnMantenimiento
             // 
@@ -387,6 +390,7 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
             this.btnMantenimiento.TabIndex = 4;
             this.btnMantenimiento.Text = "Mantenimiento";
             this.btnMantenimiento.UseVisualStyleBackColor = true;
+            this.btnMantenimiento.Click += new System.EventHandler(this.btnMantenimiento_Click);
             // 
             // btnServicio
             // 
@@ -402,6 +406,7 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
             this.btnServicio.TabIndex = 3;
             this.btnServicio.Text = "Servicio";
             this.btnServicio.UseVisualStyleBackColor = true;
+            this.btnServicio.Click += new System.EventHandler(this.btnServicio_Click);
             // 
             // btnInicio
             // 
@@ -417,6 +422,7 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
             this.btnInicio.TabIndex = 2;
             this.btnInicio.Text = "Inicio";
             this.btnInicio.UseVisualStyleBackColor = true;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // btnClose
             // 
@@ -431,6 +437,7 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
             this.btnClose.Size = new System.Drawing.Size(29, 25);
             this.btnClose.TabIndex = 1;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // Icon
             // 
@@ -498,6 +505,7 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.pAdmin.ResumeLayout(false);
             this.pServicios.ResumeLayout(false);
             this.pMantenimiento.ResumeLayout(false);

@@ -17,7 +17,7 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
         public int id { get; set; }
         public string nombre { get; set; }
         public string passwordd { get; set; }
-        public Nullable<int> rolid { get; set; }
+        public int rolid { get; set; }
     
         public virtual rol rol { get; set; }
     }

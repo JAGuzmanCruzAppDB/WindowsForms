@@ -66,6 +66,7 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
             this.btnGuardar.TabIndex = 17;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // comboBoxRol
             // 
@@ -139,6 +140,7 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
             this.btnClose.Size = new System.Drawing.Size(24, 24);
             this.btnClose.TabIndex = 8;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // pictureBox1
             // 
@@ -180,6 +182,7 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormUsuario";
             this.Text = "FormUsuario";
+            this.Load += new System.EventHandler(this.FormUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

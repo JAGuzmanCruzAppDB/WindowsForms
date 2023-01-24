@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="dbrolesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="dbtstModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="modulo">
           <Key>
             <PropertyRef Name="id" />
@@ -21,7 +21,7 @@
           <Property Name="moduloid" Type="int" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'dbroles.dbo.permiso' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'dbtst.dbo.permiso' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="permiso">
           <Key>
             <PropertyRef Name="id" />
@@ -95,7 +95,7 @@ advertencia 6002: La tabla o vista 'dbroles.dbo.permiso' no tiene definida ningu
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="dbrolesModelStoreContainer">
+        <EntityContainer Name="dbtstModelStoreContainer">
           <EntitySet Name="modulo" EntityType="Self.modulo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="opcion" EntityType="Self.opcion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="rol" EntityType="Self.rol" Schema="dbo" store:Type="Tables" />
@@ -129,7 +129,7 @@ advertencia 6002: La tabla o vista 'dbroles.dbo.permiso' no tiene definida ningu
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="dbrolesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="dbtstModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="modulo">
           <Key>
             <PropertyRef Name="id" />
@@ -226,7 +226,7 @@ advertencia 6002: La tabla o vista 'dbroles.dbo.permiso' no tiene definida ningu
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="dbrolesEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="dbtstEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="modulo" EntityType="Self.modulo" />
           <EntitySet Name="opcion" EntityType="Self.opcion" />
           <EntitySet Name="rol" EntityType="Self.rol" />
@@ -254,9 +254,9 @@ advertencia 6002: La tabla o vista 'dbroles.dbo.permiso' no tiene definida ningu
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="dbrolesModelStoreContainer" CdmEntityContainer="dbrolesEntities">
+        <EntityContainerMapping StorageEntityContainer="dbtstModelStoreContainer" CdmEntityContainer="dbtstEntities">
           <EntitySetMapping Name="modulo">
-            <EntityTypeMapping TypeName="dbrolesModel.modulo">
+            <EntityTypeMapping TypeName="dbtstModel.modulo">
               <MappingFragment StoreEntitySet="modulo">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -264,7 +264,7 @@ advertencia 6002: La tabla o vista 'dbroles.dbo.permiso' no tiene definida ningu
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="opcion">
-            <EntityTypeMapping TypeName="dbrolesModel.opcion">
+            <EntityTypeMapping TypeName="dbtstModel.opcion">
               <MappingFragment StoreEntitySet="opcion">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -273,7 +273,7 @@ advertencia 6002: La tabla o vista 'dbroles.dbo.permiso' no tiene definida ningu
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="rol">
-            <EntityTypeMapping TypeName="dbrolesModel.rol">
+            <EntityTypeMapping TypeName="dbtstModel.rol">
               <MappingFragment StoreEntitySet="rol">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -281,7 +281,7 @@ advertencia 6002: La tabla o vista 'dbroles.dbo.permiso' no tiene definida ningu
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="usuario">
-            <EntityTypeMapping TypeName="dbrolesModel.usuario">
+            <EntityTypeMapping TypeName="dbtstModel.usuario">
               <MappingFragment StoreEntitySet="usuario">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -291,7 +291,7 @@ advertencia 6002: La tabla o vista 'dbroles.dbo.permiso' no tiene definida ningu
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="permiso">
-            <EntityTypeMapping TypeName="dbrolesModel.permiso">
+            <EntityTypeMapping TypeName="dbtstModel.permiso">
               <MappingFragment StoreEntitySet="permiso">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="rolUsuarioid" ColumnName="rolUsuarioid" />

@@ -309,6 +309,7 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
             this.btnClose.Size = new System.Drawing.Size(27, 29);
             this.btnClose.TabIndex = 18;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // pictureBox1
             // 
@@ -331,6 +332,7 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
             this.btnGuardar.TabIndex = 15;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // pNombre
             // 

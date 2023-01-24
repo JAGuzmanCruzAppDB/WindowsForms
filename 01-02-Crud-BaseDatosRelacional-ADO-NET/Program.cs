@@ -16,7 +16,7 @@ namespace _01_02_Crud_BaseDatosRelacional_ADO_NET
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormLogin());
         }
     }
 }
