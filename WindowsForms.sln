@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-01-Crud-ADO-NET", "01-01
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-02-Crud-BaseDatosRelacional-ADO-NET", "01-02-Crud-BaseDatosRelacional-ADO-NET\01-02-Crud-BaseDatosRelacional-ADO-NET.csproj", "{63E3D428-88EF-4149-8BBF-9418B24C0F56}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-03-Crud-BaseDatosRelacional-and-ADO-NET-and-stored-procedure", "01-03-Crud-BaseDatosRelacional-and-ADO-NET-and-stored-procedure\01-03-Crud-BaseDatosRelacional-and-ADO-NET-and-stored-procedure.csproj", "{453CE40B-EECD-4A75-A9EC-99550C73673D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{63E3D428-88EF-4149-8BBF-9418B24C0F56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63E3D428-88EF-4149-8BBF-9418B24C0F56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63E3D428-88EF-4149-8BBF-9418B24C0F56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{453CE40B-EECD-4A75-A9EC-99550C73673D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{453CE40B-EECD-4A75-A9EC-99550C73673D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{453CE40B-EECD-4A75-A9EC-99550C73673D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{453CE40B-EECD-4A75-A9EC-99550C73673D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
